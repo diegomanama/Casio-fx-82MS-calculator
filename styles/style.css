@@ -1,0 +1,267 @@
+:root {
+    --calculator-bg-color: #455761;
+    --box-shadow-color: #303B42;
+    --secondary-box-shadow-color: #3C4A52;
+    --button-text-color: #F8F9F9;
+    --special-button-color: #D5D8DC;
+    --small-button-color: #1C2833;
+    --button-color: #99A3A4;
+    --primary-color: #F1C40F;
+    --secondary--color: #EC7063;
+    --tertiary-color: #CCD1D1;
+}
+
+body {
+    width: 100vw;
+    margin: 0;
+    padding: 30px 0;
+    display: flex;
+    align-items: center;
+    font-size: smaller;
+    text-align: center;
+}
+
+button {
+    padding: 0px;
+    border: none;
+    color: var(--button-text-color);
+    box-shadow: 0px 4px 3px var(--box-shadow-color);
+}
+
+span {
+    color: var(--primary-color);
+    align-self: end;
+}
+
+/* || Non-grid components */
+
+.calculator-div {
+    background-color: var(--calculator-bg-color);
+    width: 400px;
+    height: 700px;
+    margin: auto;
+    padding: 20px 20px 40px 20px;
+    border-radius: 5px 5px 100% 100% / 5px 5px 60px 60px;
+}
+
+#header {
+    height: 15%;
+    background-color: var(--calculator-bg-color);
+    font-size: medium;
+}
+
+#header > div {
+    display: flex;
+}
+
+#header > div:first-child {
+    justify-content: space-between;
+}
+
+#brand, #model {
+    color: var(--tertiary-color);
+}
+
+#header > div:last-child {
+    justify-content: center;
+    color: var(--secondary--color);
+}
+
+#screen {
+    background-color: rgb(145, 161, 86);
+    box-sizing: border-box;
+    height: 15%;
+    border: 10px solid;
+    border-color: var(--box-shadow-color) var(--secondary-box-shadow-color);
+    margin-bottom: 30px;
+}
+
+/* || Grid containers */
+
+#special-buttons-grid {
+    height: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 20px;
+}
+
+button[class|="special"] {
+    border-radius: 30% / 100%;
+    background-color: var(--special-button-color)
+}
+
+#small-buttons-grid {
+    height: 30%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    column-gap: 20px;
+}
+
+button[class|="small"] {
+    border-radius: 5px;
+    background-color: var(--small-button-color);
+}
+
+#buttons-grid {
+    height: 30%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    column-gap: 10px;
+}
+
+button[class|="buttons"] {
+    border-radius: 5px 5px 10px 10px;
+    background-color: var(--button-color);
+}
+
+/* || Grid items'layout */
+
+.special-rowgap {
+    grid-row: 1 / 2;
+}
+
+.special-button {
+    grid-row: 2 / 3;
+}
+
+.small-rowgap1, .small-rowgap1-padding {
+    grid-row: 1 / 2;
+}
+
+.small-rowgap1-padding, .small-buttons-row1-padding {
+    grid-column: 3 / 5;   
+}
+
+.small-buttons-row1, .small-buttons-row1-padding {
+    grid-row: 2 / 3;
+}
+
+.small-rowgap2, .small-rowgap2-padding {
+    grid-row: 3 / 4;
+}
+
+.small-rowgap2-padding {
+    grid-column: 2 / 4;
+}
+
+.small-buttons-row2 {
+    grid-row: 4 / 5;
+}
+
+.small-rowgap3 {
+    grid-row: 5 / 6;
+}
+
+.small-buttons-row3 {
+    grid-row: 6 / 7;
+}
+
+.small-rowgap4, .small-rowgap4-padding {
+    grid-row: 7 / 8;
+}
+
+.small-rowgap4-padding {
+    grid-column: 3 / 4;
+}
+
+.small-buttons-row4 {
+    grid-row: 8 / 9;
+}
+
+.small-rowgap5, .small-rowgap5-padding {
+    grid-row: 9 / 10;
+}
+
+.small-rowgap5-padding {
+    grid-column: 1 / 5;
+}
+
+.padding {
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+}
+
+.rowgap1 {
+    grid-row: 1 / 2;
+}
+
+.buttons-row1 {
+    grid-row: 2 / 4;
+}
+
+.buttons-row2 {
+    grid-row: 5 / 7;
+}
+
+.rowgap3 {
+    grid-row: 7 / 8;
+}
+
+.buttons-row3 {
+    grid-row: 8 / 10;
+}
+
+.rowgap4 {
+    grid-row: 10 / 11;
+}
+
+.buttons-row4 {
+    grid-row: 11 / 13;
+}
+
+/* || Specific grid items styles */
+
+.up-left-move {
+    transform: translate(-5px, -5px);
+}
+
+.up-right-move {
+    transform: translate(5px, -5px);
+}
+
+.left-move {
+    transform: translateX(-5px);
+}
+
+.right-move {
+    transform: translateX(5px);
+}
+
+#shift-button {
+    color: var(--primary-color);
+}
+
+#alpha-button {
+    color: var(--secondary--color);
+}
+
+#replay-button {
+    grid-column: 3 / 5;
+    grid-row: 1 / 3;
+    border-radius: 50%;
+    height: 165%;
+}
+
+#mode-button {
+    margin: 0 -10px; /* Negative margins are used to meet text overflow grid cell boundaries thus avoinding text-wrapping */
+}
+
+#mode-button::after {
+    content: ' CLR';
+    color: var(--primary-color);
+}
+
+#mode-button, #power-button {
+    color: var(--tertiary-color);
+}
+
+.small-rowgap5 {
+    align-self: start;
+}
+
+button[class~="eraser-button"] {
+    background-color: var(--secondary--color);
+}
